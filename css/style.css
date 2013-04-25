@@ -1,0 +1,31 @@
+/** {
+   border: 1px solid red !important;
+}*/
+html{height: 100%}
+body{background-color: gray;
+	font-family: arial;
+	margin: 0 auto;
+	height: 100%;
+	}
+h1{			font-family: arial;
+			letter-spacing: 5px;
+			font-size: 50px;
+			text-decoration: underline;
+}
+#wrapper{
+			width: 40%;
+			margin: 0 auto;
+}
+#links a:link, a:visited{
+			color: black;
+}
+#link a:hover{
+			color: black;
+}
+#meny a:link{text-decoration:none;
+			color: black;
+			font-weight:bold;
+}
+#meny{		text-decoration:none;
+			color: black;
+}
