@@ -3,10 +3,6 @@ include_once ('resources/init.php');
 
 $posts = (isset($_GET['id']))?get_posts($_GET['id']) : get_posts(); 
 
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +29,7 @@ $posts = (isset($_GET['id']))?get_posts($_GET['id']) : get_posts();
             </ul>
         </div>
         
-        <h1>Breischs decent blog</h1>
+        <h1>Breisch's decent blog</h1>
                     
         <?php
         foreach ($posts AS $post){
@@ -62,6 +58,8 @@ $posts = (isset($_GET['id']))?get_posts($_GET['id']) : get_posts();
       }
         
         ?>
+    <footer>Gustav Breisch, 2013</footer>
     </div><!-- End wrapper -->
+
     </body>
 </html>

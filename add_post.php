@@ -36,7 +36,7 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
 <html>
     <head>
         <meta charset=utf-8>
-
+        <link rel="stylesheet" href="css/style.css">
         <style>
         label {display:block;}
         </style>
@@ -44,6 +44,7 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
         <title> Add a Post</title>
     </head>
     <body>
+    <div id="wrapper">
         <h1>Add a Post</h1>
 
         <?php 
@@ -60,11 +61,11 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
             </div>
             <div>
                 <label for = "contents"> Contents</label>
-                <textarea name = "contents" rows = "15" cols = "50"><?php if ( isset($_POST['contents']) ) echo $_POST['contents'];?></textarea>
+                <textarea id="contents" name = "contents" rows = "15" cols = "50"><?php if ( isset($_POST['contents']) ) echo $_POST['contents'];?></textarea>
             </div>
             <div>
                 <label for ="category"> Category </label>
-                <select name = "category">
+                <select id="dropdown"name = "category">
                     <?php
                     foreach(get_categories() as $category) {
                         ?>
@@ -81,6 +82,6 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
                 <input type = "submit" value ="Add Post">
             </div>
         </form>
-        
+        </div><!-- End wrapper -->
     </body>
 </html>
