@@ -10,7 +10,7 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
     if ( empty($title)) {
         $errors[] = "You need to supply a title.";
     }else if ( strlen($title) > 255) {
-        $errors [] = "The title cannot be longer than 255 characters.";
+        $errors [] = "The title cannot be longer than 255 characters!";
     }
 
     if ( empty($contents)) {
