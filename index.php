@@ -1,7 +1,18 @@
 <?php
 include_once ('resources/init.php');
+session_start();
+//$posts = (isset($_GET['id']))?get_posts($_GET['id']) : get_posts(); 
 
-$posts = (isset($_GET['id']))?get_posts($_GET['id']) : get_posts(); 
+if (isset($_SESSION['id'])) {
+	// Put stored session variables into local php variable
+    $userid = $_SESSION['id'];
+    $username = $_SESSION['username'];
+	$toplinks = '<a href="http://i.imgur.com/dxZCo6W.png' . $userid . '">' . $username . '</a> &bull; 
+ 	 
+	<a href="logout.php">Log Out</a>';
+} else {
+	$toplinks = '<a href="join_form.php">Register</a> &bull; <a href="login.php">Login</a>';
+}
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +37,10 @@ $posts = (isset($_GET['id']))?get_posts($_GET['id']) : get_posts();
                 <li><a href="add_post.php">Add Post</a></li>
                 <li><a href="add_category.php">Add category</a></li>
                 <li><a href="category_list.php">Category list</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><?php echo $toplinks ?></li>
             </ul>
+            
         </div>
         
         <h1>Breisch's decent blog</h1>
